@@ -1,0 +1,75 @@
+﻿<Page
+    x:Class="ArrayFindElement.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ArrayFindElement"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <StackPanel>
+        <Grid Margin="20,0,0,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="275" />
+                <ColumnDefinition Width="165" />
+                <ColumnDefinition Width="135" />
+                <ColumnDefinition Width="135" />
+                <ColumnDefinition Width="135" />
+                <ColumnDefinition Width="135" />
+                <ColumnDefinition Width="*" />
+                <!--<ColumnDefinition Width="*" />-->
+            </Grid.ColumnDefinitions>
+
+            <Rectangle Grid.Row="0" Grid.ColumnSpan="6">
+                <Rectangle.Fill>
+                    <LinearGradientBrush EndPoint="0.8,1" StartPoint="0.,0">
+                        <GradientStop Color="{ThemeResource SystemChromeHighColor}" Offset="0" />
+                        <GradientStop Color="White" Offset="1" />
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+
+            <!--Labels on First Column-->
+            <TextBlock Text="Find your Elements and Values Helper " FontSize="48" Grid.ColumnSpan="6" Margin="0,0,0.2,0" HorizontalAlignment="Stretch" Height="64" VerticalAlignment="Top" />
+            <TextBlock Name="textBlockSingleArray" Grid.Row="2" Text="Finder for Single Array: " VerticalAlignment="Center" FontSize="16" FontFamily="Segoe UI" Margin="0,10,0,10" />
+            <TextBlock Name="textBlockMultiDemensionArray" Grid.Row="3" Text="Finder for MultiDemensional Array:" VerticalAlignment="Center" FontSize="16" FontFamily="Segoe UI" Margin="0,0,0,0" />
+
+            <!--Second Column for user input-->
+            <TextBlock Text="Enter Value to Find:" Grid.Row="1" Grid.Column="1"  VerticalAlignment="Center" 
+                       FontSize="16" FontWeight="Bold" FontFamily="Segoe UI" Margin="0,10,0,10" />
+            <TextBox Name="TextBoxSingleArray" Grid.Row="2" Width="100" Margin="275,10,0,8" HorizontalAlignment="Left" 
+                       MaxLength="3" FontSize="16" GotFocus="TextBoxSingleArray_GotFocus" Grid.ColumnSpan="2" />
+
+            <TextBox Name="TextBoxMultiDemensionArray" Grid.Row="3" Grid.Column="1" Width="100" Margin="0,10,0,10" HorizontalAlignment="Left" 
+                       MaxLength="3" FontSize="16" GotFocus="TextBoxMultiDemensionArray_GotFocus"  />
+
+            <!--Labels on Third Column where Return output is provided-->
+            <TextBlock Text="Return Value:" Grid.Row="1" Grid.Column="2"  VerticalAlignment="Center" FontSize="16" FontWeight="Bold" FontFamily="Segoe UI" Margin="0,10,0,10" />
+            <TextBox Grid.Row="2" Grid.Column="2" Name="TextBoxSingleArrayValue" Width="100" Margin="0,0,0,9" HorizontalAlignment="Left" FontSize="16" Height="34" VerticalAlignment="Bottom" />
+            <TextBox Grid.Row="3" Grid.Column="2" Name="TextBoxMultiDemensionalValue" Width="100" Margin="0,10,0,10" HorizontalAlignment="Left" FontSize="16" />
+
+            <!--Labels on Fourth Column where Position output is provided-->
+            <TextBlock Text="Array Position:" Grid.Row="1" Grid.Column="3"  VerticalAlignment="Center" FontSize="16" FontWeight="Bold" FontFamily="Segoe UI" Margin="0,10,0,10" />
+            <TextBox Grid.Row="2" Grid.Column="3" Name="TextBoxSinglePosition" Width="100" Margin="0,10,0,10" HorizontalAlignment="Left" FontSize="16" Grid.ColumnSpan="2"                  />
+            <TextBox Grid.Row="3" Grid.Column="3" Name="TextBoxMultiDemensionalPosition" Width="100" Margin="0,10,0,10" HorizontalAlignment="Left" FontSize="16" />
+
+            <!--Buttons on Fifth Column for control-->
+            <Button Name="ButtonSingleGetValues" Grid.Row="2" Grid.Column="3" Content="Get Values" Margin="135,10,0,0" Click="ButtonSingleGetValues_Click" Grid.ColumnSpan="2" VerticalAlignment="Top" Height="35" />
+            <Button Name="ButtonMultiDemensionalGetValues" Grid.Row="3" Grid.Column="4" Content="Get Values" Margin="0,10,0,10" Click="ButtonMultiDemensionalGetValues_Click" />
+
+            <!--Buttons on Sixth Column for control-->
+            <Button Name="ButtonSingleResetValues" Grid.Row="2" Grid.Column="5" Content="Reset Boxes" Margin="0,10,0,10" Click="ButtonSingleResetValues_Click" />
+            <Button Name="ButtonMultiDemensionalResetValues" Grid.Row="3" Grid.Column="5" Content="Reset Boxes" Margin="0,10,0,10" Click="ButtonMultiDemensionalResetValues_Click" />
+        </Grid>
+    </StackPanel>
+</Page>
